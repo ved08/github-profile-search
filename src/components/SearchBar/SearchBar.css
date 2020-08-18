@@ -1,0 +1,9 @@
+.Search {
+    margin-top: 10px;
+    width: 600px;
+    height: 35px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}

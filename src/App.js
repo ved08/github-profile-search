@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import axios from "axios";
+
+import SearchBar from "./components/SearchBar/SearchBar";
+import Cards from "./components/Cards/Cards"
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+axios.defaults.baseURL = 'https://api.github.com'
+
+class App extends Component {
+  state = {
+    inputVal: '',
+    searchPemission: false
+  };
+
+  inputChangedHandler = (event) => {
+    this.setState({inputVal: event.target.parentElement.firstElementChild.value})
+    console.log()
+  }
+  searchResultsHandler = () => {
+    this.setState({searchPemission: true})
+  }
+
+  render () {
+    return (
+      <div className="App">
+        <SearchBar search={(e) => this.inputChangedHandler(e)}/>
+        <Cards query={this.state.inputVal}/>
+      </div>
   );
+  }
 }
 
 export default App;
