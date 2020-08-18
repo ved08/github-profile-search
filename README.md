@@ -3,6 +3,7 @@ _This project is currently in development. There may be many bugs_
 Content will be added soon
 
 # Project
+_Project currently in development_
 [See here](https://ved08.github.io/github-profile-search/)
 
 # Contribution
