@@ -24,6 +24,7 @@ class App extends Component {
   render () {
     return (
       <div className="App">
+        <h1>GitHub Profile Searcher</h1>
         <SearchBar search={(e) => this.inputChangedHandler(e)}/>
         <Cards query={this.state.inputVal}/>
       </div>
